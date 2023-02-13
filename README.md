@@ -17,3 +17,7 @@
 个人主页内实现 Canvas 裁剪头像
 
 ![image-20230213103949195](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302131039500.png)
+
+更新：对跳转按钮添加防抖，以获得更好的使用体验
+
+对可拖动按钮添加节流，避免过大性能消耗

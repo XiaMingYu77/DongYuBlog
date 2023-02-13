@@ -169,40 +169,51 @@ function btnDown(event: any) {
     dy = moveBtn.value.offsetTop;
 }
 
-function btnMove(event: any) {
-    if (flags) {
-        if (Math.abs(position.x - beforMovePosition.x) > 20 ||
-            Math.abs(position.y - beforMovePosition.y) > 20) moving.value = true; //防抖，防止用户点击按钮却判断为移动按钮 
+let btnMove = (() => {
+    let ticking = false;
+    return function (event:any) {
+        if (!ticking) {
+            ticking = true;
+            window.requestAnimationFrame(() => {
+                //添加节流
+                if (flags) {
+                    if (Math.abs(position.x - beforMovePosition.x) > 20 ||
+                        Math.abs(position.y - beforMovePosition.y) > 20) moving.value = true; //防抖，防止用户点击按钮却判断为移动按钮 
 
-        let touch;
-        if (event.touches) {
-            touch = event.touches[0];
-        } else {
-            touch = event;
+                    let touch;
+                    if (event.touches) {
+                        touch = event.touches[0];
+                    } else {
+                        touch = event;
+                    }
+                    nx = touch.clientX - position.x;
+                    ny = touch.clientY - position.y;
+
+                    xPum = dx + nx;
+                    yPum = dy + ny;
+
+                    let clientWidth = document.documentElement.clientWidth;
+                    let clientHeight = document.documentElement.clientHeight;
+
+
+                    if (xPum > 0 && xPum < (clientWidth - moveBtn.value.offsetWidth)) {
+                        moveBtn.value.style.left = xPum + "px";
+                    }
+                    if (yPum > 0 && yPum < (clientHeight - moveBtn.value.offsetHeight)) {
+                        moveBtn.value.style.top = yPum + "px";
+                    }
+
+                    //阻止页面的滑动默认事件
+                    document.addEventListener("touchmove", handler, {
+                        passive: false
+                    });
+                }
+
+                ticking = false;
+            })
         }
-        nx = touch.clientX - position.x;
-        ny = touch.clientY - position.y;
-
-        xPum = dx + nx;
-        yPum = dy + ny;
-
-        let clientWidth = document.documentElement.clientWidth;
-        let clientHeight = document.documentElement.clientHeight;
-
-
-        if (xPum > 0 && xPum < (clientWidth - moveBtn.value.offsetWidth)) {
-            moveBtn.value.style.left = xPum + "px";
-        }
-        if (yPum > 0 && yPum < (clientHeight - moveBtn.value.offsetHeight)) {
-            moveBtn.value.style.top = yPum + "px";
-        }
-
-        //阻止页面的滑动默认事件
-        document.addEventListener("touchmove", handler, {
-            passive: false
-        });
     }
-}
+})();
 
 function btnEnd() {
     flags = false;
@@ -219,12 +230,12 @@ function handler(event: any) {
     }
 }
 
-let emit = defineEmits(['backClick','homeClick'])
+let emit = defineEmits(['backClick', 'homeClick'])
 
-function backClick(){
+function backClick() {
     if (!moving.value) emit('backClick');
 }
-function homeClick(){
+function homeClick() {
     if (!moving.value) emit('homeClick');
 }
 

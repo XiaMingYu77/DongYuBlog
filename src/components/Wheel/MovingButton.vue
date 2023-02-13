@@ -110,6 +110,7 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref, watch } from "vue";
 import ButtonShake from "../Tools/ButtonShake";
+import Throtting from '../Tools/Throttling';
 
 let hide = true;
 let flags = false;
@@ -169,51 +170,43 @@ function btnDown(event: any) {
     dy = moveBtn.value.offsetTop;
 }
 
-let btnMove = (() => {
-    let ticking = false;
-    return function (event:any) {
-        if (!ticking) {
-            ticking = true;
-            window.requestAnimationFrame(() => {
-                //添加节流
-                if (flags) {
-                    if (Math.abs(position.x - beforMovePosition.x) > 20 ||
-                        Math.abs(position.y - beforMovePosition.y) > 20) moving.value = true; //防抖，防止用户点击按钮却判断为移动按钮 
+function btnMove(event: any) {
+    Throtting(() => {
+        //添加节流
+        if (flags) {
+            if (Math.abs(position.x - beforMovePosition.x) > 20 ||
+                Math.abs(position.y - beforMovePosition.y) > 20) moving.value = true; //防抖，防止用户点击按钮却判断为移动按钮 
 
-                    let touch;
-                    if (event.touches) {
-                        touch = event.touches[0];
-                    } else {
-                        touch = event;
-                    }
-                    nx = touch.clientX - position.x;
-                    ny = touch.clientY - position.y;
+            let touch;
+            if (event.touches) {
+                touch = event.touches[0];
+            } else {
+                touch = event;
+            }
+            nx = touch.clientX - position.x;
+            ny = touch.clientY - position.y;
 
-                    xPum = dx + nx;
-                    yPum = dy + ny;
+            xPum = dx + nx;
+            yPum = dy + ny;
 
-                    let clientWidth = document.documentElement.clientWidth;
-                    let clientHeight = document.documentElement.clientHeight;
+            let clientWidth = document.documentElement.clientWidth;
+            let clientHeight = document.documentElement.clientHeight;
 
 
-                    if (xPum > 0 && xPum < (clientWidth - moveBtn.value.offsetWidth)) {
-                        moveBtn.value.style.left = xPum + "px";
-                    }
-                    if (yPum > 0 && yPum < (clientHeight - moveBtn.value.offsetHeight)) {
-                        moveBtn.value.style.top = yPum + "px";
-                    }
+            if (xPum > 0 && xPum < (clientWidth - moveBtn.value.offsetWidth)) {
+                moveBtn.value.style.left = xPum + "px";
+            }
+            if (yPum > 0 && yPum < (clientHeight - moveBtn.value.offsetHeight)) {
+                moveBtn.value.style.top = yPum + "px";
+            }
 
-                    //阻止页面的滑动默认事件
-                    document.addEventListener("touchmove", handler, {
-                        passive: false
-                    });
-                }
-
-                ticking = false;
-            })
+            //阻止页面的滑动默认事件
+            document.addEventListener("touchmove", handler, {
+                passive: false
+            });
         }
-    }
-})();
+    })
+}
 
 function btnEnd() {
     flags = false;

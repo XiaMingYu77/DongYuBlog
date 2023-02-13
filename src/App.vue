@@ -20,6 +20,7 @@ import router from "./router/router";
 import MovingButton from "./components/Wheel/MovingButton.vue"
 import CookieUtil from './components/Tools/CookieTool'
 import createRibbons from './components/Background/coloredRibbon'
+import { FLIPPED_ALIAS_KEYS } from "@babel/types";
 
 
 //用户信息，在这里要获取cookie中的登陆信息更新全局变量
@@ -61,29 +62,30 @@ let PageGraduallyStyle = reactive({
 router.afterEach((to, from) => {
   // console.log(to.name)
   // 进入最外层页面的渐变显示
-  if (to.name === 'LogInPage' || to.name === 'PersonalCenter' || 
-  (to.name === 'BlogsCenter' && from.name !== 'BlogPage' && from.name !== 'UserInfoCenter') || 
-  (to.name === 'BlogPage' && from.name !== 'BlogsCenter' && from.name !== 'UserInfoCenter') ||
-  (to.name === 'UserInfoCenter' && from.name !== 'BlogsCenter' && from.name !== 'BlogPage')) {
-    PageGraduallyStyle.animation = 'PageGraduallyShow 1s ease';
-    PageGraduallyStyle.opacity = '1'
-  }
-
-  // 可移动Home键的自动移动
-  if (to.name === 'BlogPage') {   //这里是需要移动到位置1的页面
-    movingBtnStyle.left = '65%';
-    movingBtnStyle.top = '80%';
-    movingBtnStyle.transition = 'all 1.5s';
-    setTimeout(() => {
-      movingBtnStyle.transition = ''
-    }, 1500);
-  } else {  // 这里是剩下挪到位置2的页面
-    movingBtnStyle.left = '90%';
-    movingBtnStyle.top = '85%';
-    movingBtnStyle.transition = 'all 1.5s';
-    setTimeout(() => {
-      movingBtnStyle.transition = ''
-    }, 1500);
+  if (to.name) {
+    if (to.name === 'LogInPage' || to.name === 'PersonalCenter' ||
+      (to.name === 'BlogsCenter' && from.name !== 'BlogPage' && from.name !== 'UserInfoCenter') ||
+      (to.name === 'BlogPage' && from.name !== 'BlogsCenter' && from.name !== 'UserInfoCenter') ||
+      (to.name === 'UserInfoCenter' && from.name !== 'BlogsCenter' && from.name !== 'BlogPage')) {
+      PageGraduallyStyle.animation = 'PageGraduallyShow 1s ease';
+      PageGraduallyStyle.opacity = '1'
+    }
+    // 可移动Home键的自动移动
+    if (to.name === 'BlogPage') {   //这里是需要移动到位置1的页面
+      movingBtnStyle.left = '65%';
+      movingBtnStyle.top = '80%';
+      movingBtnStyle.transition = 'all 1.5s';
+      setTimeout(() => {
+        movingBtnStyle.transition = ''
+      }, 1500);
+    } else {  // 这里是剩下挪到位置2的页面
+      movingBtnStyle.left = '90%';
+      movingBtnStyle.top = '85%';
+      movingBtnStyle.transition = 'all 1.5s';
+      setTimeout(() => {
+        movingBtnStyle.transition = ''
+      }, 1500);
+    }
   }
 })
 function animationEnd() {
@@ -91,14 +93,18 @@ function animationEnd() {
 }
 router.beforeEach(async (to, from) => {
   //处理最外层页面的渐进消失
-  if (from.name === 'LogInPage' || from.name === 'PersonalCenter' ||
-  (from.name === 'BlogPage' && to.name !== 'BlogsCenter' && to.name !== 'UserInfoCenter') ||
-  (from.name === 'BlogsCenter' && to.name !== 'BlogPage' && to.name !== 'UserInfoCenter') ||
-  (from.name === 'UserInfoCenter' && to.name !== 'BlogPage' && to.name !== 'BlogsCenter')) {
-    PageGraduallyStyle.animation = 'PageGraduallyClose 0.3s ease';
-    PageGraduallyStyle.opacity = '0';
-    let p = new Promise((resolve) => { setTimeout(resolve, 300) });
-    await p;
+  if (to.name) {
+    if (from.name === 'LogInPage' || from.name === 'PersonalCenter' ||
+      (from.name === 'BlogPage' && to.name !== 'BlogsCenter' && to.name !== 'UserInfoCenter') ||
+      (from.name === 'BlogsCenter' && to.name !== 'BlogPage' && to.name !== 'UserInfoCenter') ||
+      (from.name === 'UserInfoCenter' && to.name !== 'BlogPage' && to.name !== 'BlogsCenter')) {
+      PageGraduallyStyle.animation = 'PageGraduallyClose 0.3s ease';
+      PageGraduallyStyle.opacity = '0';
+      let p = new Promise((resolve) => { setTimeout(resolve, 300) });
+      await p;
+    }
+  } else {
+    return false;
   }
 })
 

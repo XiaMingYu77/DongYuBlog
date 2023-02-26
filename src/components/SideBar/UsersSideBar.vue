@@ -153,7 +153,7 @@ import { jsxAttribute } from '@babel/types';
 import ButtonShake from '../Tools/ButtonShake';
 
 let userName = ref("屿洺");
-let getUserHeadImg = "https://ts1.cn.mm.bing.net/th/id/R-C.86a0fa17b9b37ff7518b552e2517a0ae?rik=CX0%2fMchuLIBQVA&riu=http%3a%2f%2fimg.crcz.com%2fallimg%2f201809%2f11%2f1536666825645562.jpg&ehk=g6IGr0cDabvrRd5KSQdbup2trGpltKDfA7Hx7eopcm0%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+let getUserHeadImg = "/head.jpeg";
 
 //用户信息
 const cns: any = getCurrentInstance();

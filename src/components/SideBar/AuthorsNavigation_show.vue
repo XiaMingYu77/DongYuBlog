@@ -1,10 +1,11 @@
 <script lang="ts">
 import { h } from 'vue';
-
+import { useRouter } from 'vue-router';
 
 export default {
     props: ['authors'],
     setup: (props:any) => {
+        const router = useRouter();
         type AuthorObject = {
             authorID: string;
             authorName: string,
@@ -13,72 +14,18 @@ export default {
         // let authors: AuthorObject[] = props.authors.value;
         let authors: AuthorObject[] = [
             {
-                authorID: '我咋知道',
-                authorName: '墨屿洺1',
+                authorID: '1',
+                authorName: '墨屿洺',
                 authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺2',
-                authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺3',
-                authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺4',
-                authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺5',
-                authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺5',
-                authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺5',
-                authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺5',
-                authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺5',
-                authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺5',
-                authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺5',
-                authorHeadPortrait: '/userHeader.png'
-            },
-            {
-                authorID: '我咋知道',
-                authorName: '墨屿洺5',
-                authorHeadPortrait: '/userHeader.png'
-            },
+            }
         ];
         function createLi() {
             let liNodes = [];
             for (const author of authors) {
                 let v_node = h('li', {
                     onclick: () => {
-                        // router.push(`/${blog.blogID}`);      //此处路径没写全，要等主页部署完毕后再弄
+                        console.log('hhh')
+                        router.push(`/Home/UserInfoCenter/${author.authorID}`);      //此处路径没写全，要等主页部署完毕后再弄
                     },
                     class: 'author-skipBar'
                 }, [

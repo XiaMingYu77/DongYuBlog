@@ -32,7 +32,7 @@ let state = reactive({
 
 
 let route = useRoute();
-let blogID = ref(route.params.blogID);
+let blogID: any = ref(route.params.blogID);
 let gettedText = ref(false);
 let isMyBlog = reactive({
   bol: false,
@@ -47,7 +47,8 @@ type BlogResponseData = {
 }
 async function getText() {
   let text = '';
-  await fetch("/Git 版本控制的使用.md")
+  let blog:string = blogID.value;
+  await fetch(`/Md/${blog}`)
     .then((response) => response.text())
     .then((data) => text = data);
   let obj = {
@@ -147,38 +148,29 @@ provide('markDownState', ()=>state);
 .blog-page {
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 17.5%;
+  padding-right: 17.5%;
 }
 
 .blog-show .md-fullscreen {
   position: static;
   border: 0;
-  grid-column: 1/2;
-  grid-row: 1/-1;
 
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 20%;
+  display: flex;
+  flex-direction: row;
 }
 
 .blog-show .md-catalog-editor {
   box-sizing: border-box;
   display: block !important;
-  grid-row: 1/-1;
-  grid-column: 2/3;
   position: static;
   height: 100vh;
-  width: auto;
   z-index: 4;
   background-color: #dfe3e6;
 }
 
 .blog-show .md-content {
   box-sizing: border-box;
-  grid-row: 1/-1;
-  grid-column: 1/2;
+  width: 80%;
   position: static;
   height: 100vh;
   background-color: #F0F4F6;

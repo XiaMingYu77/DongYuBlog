@@ -21,73 +21,60 @@ export default {
 
         // let blogs: BlogObject[] = props.blogs;
         let blogs: BlogObject[] = [{
-            blogID: 'First',
-            blogTitle: '这个是测试题目1',
-            blogBrief: '我们用测试数据就别讲究那么多了\n hhh \ngg\na\nb\nc',
-            authorName: '墨屿洺egabgiauhgsg',
-            authorHeadPortrait: '/userHeader.png'
-        }, {
-            blogID: 'Second',
-            blogTitle: '测试题目2',
-            blogBrief: '捏0036E8F2.png',
-            authorName: 'hhh',
+            blogID: 'Git 版本控制的使用.md',
+            blogTitle: 'Git 版本控制的使用',
+            blogBrief: '详细简述git相关操作，以及工作中可能需要处理的分支问题',
+            authorName: '墨屿洺',
             authorHeadPortrait: '/userHeader.png'
         },
         {
-            blogID: 'Second',
-            blogTitle: '测试题目3',
-            blogBrief: '捏0036E8F2.png',
-            authorName: 'hhh',
+            blogID: 'Vue.js.md',
+            blogTitle: 'Vue.js',
+            blogBrief: 'Vue3的使用',
+            authorName: '墨屿洺',
             authorHeadPortrait: '/userHeader.png'
         },
         {
-            blogID: 'Second',
-            blogTitle: '测试题目4',
-            blogBrief: '捏0036E8F2.png',
-            authorName: 'hhh',
+            blogID: '算法.md',
+            blogTitle: '算法',
+            blogBrief: '一些基础算法',
+            authorName: '墨屿洺',
             authorHeadPortrait: '/userHeader.png'
         },
         {
-            blogID: 'Second',
-            blogTitle: '测试题目5',
-            blogBrief: '捏0036E8F2.png',
-            authorName: 'hhh',
+            blogID: 'Typora-PicGo-GitHub实现图片自动上传的方法.md',
+            blogTitle: 'Typora-PicGo-GitHub实现图片自动上传的方法',
+            blogBrief: '利用github搭建图床，picgo脚本上传',
+            authorName: '墨屿洺',
             authorHeadPortrait: '/userHeader.png'
         },
         {
-            blogID: 'Second',
-            blogTitle: '测试题目6',
-            blogBrief: '捏0036E8F2.png',
-            authorName: 'hhh',
+            blogID: 'Node.js —— 用Js来搭建后端.md',
+            blogTitle: 'Node.js —— 用Js来搭建后端',
+            blogBrief: 'nodejs的基础使用',
+            authorName: '墨屿洺',
             authorHeadPortrait: '/userHeader.png'
         },
         {
-            blogID: 'Second',
-            blogTitle: '测试题目7',
-            blogBrief: '捏0036E8F2.png',
-            authorName: 'hhh',
+            blogID: '屿家笔记库—SQL语法.md',
+            blogTitle: '屿家笔记库—SQL语法',
+            blogBrief: '基础数据库操作语法',
+            authorName: '墨屿洺',
             authorHeadPortrait: '/userHeader.png'
         },
-        {
-            blogID: 'Second',
-            blogTitle: '测试题目8',
-            blogBrief: '捏0036E8F2.png',
-            authorName: 'hhh',
-            authorHeadPortrait: '/userHeader.png'
-        }
         ] //测试数据
 
 
         function createLi() {
             let liNodes = [];
             for (const blog of blogs) {
-                let timmer:any = null;
+                let timmer: any = null;
                 let v_node = h('li', {
                     onclick: () => {
                         clearTimeout(timmer);
-                        timmer = setTimeout(()=>{
-                            router.push(`/Home/BlogPage/1`);
-                        },300);
+                        timmer = setTimeout(() => {
+                            router.push(`/Home/BlogPage/${blog.blogID}`);
+                        }, 300);
                     },
                     class: 'blog-skipBar'
                 }, [

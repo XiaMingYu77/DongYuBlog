@@ -25,7 +25,7 @@ const routes: Array<any> = [
                 component: ()=>import("@/components/Page/BlogPage.vue")
             },
             {
-                path:'UserInfoCenter',
+                path:'UserInfoCenter/:authorID',
                 name:'UserInfoCenter',
                 component: ()=>import("@/components/Page/UserInfoCenter.vue")
             }

@@ -4,7 +4,7 @@
             <div class="head card">
                 <div class="user-profile-head-info">
                     <div class="headImg-out">
-                        <img class="headImg" src="../../assets/headBeforeSet.svg">
+                        <img class="headImg" src="/userHeader.png">
                     </div>
                     <div class="text-info">
                         <p class="userNickName">墨屿洺</p>
@@ -81,6 +81,7 @@
 }
 
 .headImg {
+    border-radius: 50%;
     height: 90px;
     width: 90px;
 
@@ -240,23 +241,23 @@ let currentTab = ref(Tabs[0]);
 let currentTabIndex = 0; //记录现在显示的内容
 
 //切换内容页面
-function changeContentPage(event:Event){
+function changeContentPage(event: Event) {
     const el: any = event.target;
     let name = el.getAttribute('name');
-    switch(name){
+    switch (name) {
         case 'UserArticalDisplay':
             currentTab.value = Tabs[0];
             currentTabIndex = 0;
             break;
     }
 }
-watch(currentTab,()=>{ //如果这个改变表示切换了页面，我们需要对其进行数据的自动加载
+watch(currentTab, () => { //如果这个改变表示切换了页面，我们需要对其进行数据的自动加载
     getUserContent(searchKeyWord.value);
 })
 
 type BlogsResponseData = {
     code: Number;
-    blogs: [];
+    blogs: any[];
     msg: string;
 }
 
@@ -280,8 +281,54 @@ function getUserContent(searchKeyWord: string) {
 async function getUserBlogs(searchKeyWord: string) {
     //暂时不清楚搜索方式，后面再写
     //keyWord为空时显示所有相关内容
-
-    // checkBlogsResponseData(data);
+    let data: BlogsResponseData = {
+        code: 200,
+        blogs: [{
+            blogID: 'Git 版本控制的使用.md',
+            blogTitle: 'Git 版本控制的使用',
+            blogBrief: '详细简述git相关操作，以及工作中可能需要处理的分支问题',
+            authorName: '墨屿洺',
+            authorHeadPortrait: '/userHeader.png'
+        },
+        {
+            blogID: 'Vue.js.md',
+            blogTitle: 'Vue.js',
+            blogBrief: 'Vue3的使用',
+            authorName: '墨屿洺',
+            authorHeadPortrait: '/userHeader.png'
+        },
+        {
+            blogID: '算法.md',
+            blogTitle: '算法',
+            blogBrief: '一些基础算法',
+            authorName: '墨屿洺',
+            authorHeadPortrait: '/userHeader.png'
+        },
+        {
+            blogID: 'Typora-PicGo-GitHub实现图片自动上传的方法.md',
+            blogTitle: 'Typora-PicGo-GitHub实现图片自动上传的方法',
+            blogBrief: '利用github搭建图床，picgo脚本上传',
+            authorName: '墨屿洺',
+            authorHeadPortrait: '/userHeader.png'
+        },
+        {
+            blogID: 'Node.js —— 用Js来搭建后端.md',
+            blogTitle: 'Node.js —— 用Js来搭建后端',
+            blogBrief: 'nodejs的基础使用',
+            authorName: '墨屿洺',
+            authorHeadPortrait: '/userHeader.png'
+        },
+        {
+            blogID: '屿家笔记库—SQL语法.md',
+            blogTitle: '屿家笔记库—SQL语法',
+            blogBrief: '基础数据库操作语法',
+            authorName: '墨屿洺',
+            authorHeadPortrait: '/userHeader.png'
+        },
+        ], //测试数据
+        msg:''
+    }
+    checkBlogsResponseData(data);
 }
 
 function checkBlogsResponseData(data: BlogsResponseData) {
@@ -298,5 +345,6 @@ function checkBlogsResponseData(data: BlogsResponseData) {
 //搜索
 function searchBtnClicked() {
     getUserContent(searchKeyWord.value);
+    console.log('后端搜索功能尚未实现');
 }
 </script>

@@ -115,8 +115,8 @@ function wordAnimationEnd() {
 }
 
 let rightBarStyle = reactive({
-  width: '',
-  right: ''
+  width: '70vh',
+  right: '-68vh'
 })
 
 function saveBlogEdit(text: string) { //当编辑页进行保存时的附属操作

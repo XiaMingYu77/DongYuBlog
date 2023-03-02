@@ -62,6 +62,13 @@ export default {
             authorName: '墨屿洺',
             authorHeadPortrait: '/userHeader.png'
         },
+        {
+            blogID: 'CSS.md',
+            blogTitle: 'CSS',
+            blogBrief: '各种CSS使用',
+            authorName: '墨屿洺',
+            authorHeadPortrait: '/userHeader.png'
+        },
         ] //测试数据
 
 

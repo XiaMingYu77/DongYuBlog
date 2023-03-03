@@ -32,7 +32,7 @@ console.log('Server running at http://127.0.0.1:8888/');
 
 在浏览器访问该网页，即浏览器向该地址发送请求然后得到我们服务器的响应
 
-![image-20221203163704042](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202212031637094.png) 
+![image-20221203163704042](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202212031637094.png) 
 
 
 
@@ -201,7 +201,7 @@ hello.world();
 
 Node.js 中存在 4 类模块（原生模块和3种文件模块）
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202212071650517.png" alt="image-20221207165038431" style="zoom: 67%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202212071650517.png" alt="image-20221207165038431" style="zoom: 67%;" /> 
 
 ==下面的解释内容就是上面图，直接看上图就好==
 
@@ -256,7 +256,7 @@ npm install express -g   # 全局安装
 - **main** - main 字段指定了程序的主入口文件，require('moduleName') 就会加载这个文件。这个字段的默认值是模块根目录下面的 index.js。
 - **keywords** - 关键字
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202212031707464.png" alt="image-20221203170758429" style="zoom: 80%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202212031707464.png" alt="image-20221203170758429" style="zoom: 80%;" /> 
 
  Package.json 属性说明
 
@@ -398,7 +398,7 @@ Node 是首个将异步作为主要编程方式和设计理念的编程语言或
 
 Node 的执行模型
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202212081546318.jpg" alt="mmexport1670485538583" style="zoom: 25%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202212081546318.jpg" alt="mmexport1670485538583" style="zoom: 25%;" /> 
 
 相关概念：观察者：用于告知是否还有事件需要处理
 
@@ -406,7 +406,7 @@ Node 的执行模型
 
 **Node 搭建 Web 服务器的实现基础流程**：==事件驱动服务器==
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202212081627092.jpg" alt="mmexport1670488033081" style="zoom:33%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202212081627092.jpg" alt="mmexport1670488033081" style="zoom:33%;" /> 
 
 ### process.nextTick()
 

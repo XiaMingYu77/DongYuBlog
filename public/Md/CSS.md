@@ -45,7 +45,7 @@
 
    结果：
 
-   ![image-20220902085821825](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209020858863.png)
+   ![image-20220902085821825](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209020858863.png)
 
    这个可以复合其它的类型选择符使用（父选择符+空格+子选择符）
 
@@ -241,7 +241,7 @@
 
 3.使用伪元素 before,after 设置为display:inline-block,需要再次设置 vertical-align:middle
 
-![image-20220902113452987](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209021134026.png) 
+![image-20220902113452987](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209021134026.png) 
 
 
 
@@ -416,7 +416,7 @@
 </html>
 ```
 
-![image-20220902135146189](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209021351225.png) 
+![image-20220902135146189](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209021351225.png) 
 
 
 
@@ -472,7 +472,7 @@
 </html>
 ```
 
-![image-20220903110338734](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031103776.png)
+![image-20220903110338734](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031103776.png)
 
 ### 层叠
 
@@ -622,7 +622,7 @@ normalize.css：[Normalize.css: Make browsers render all elements more consisten
 
 ### 盒模型
 
-<img src="../../Desktop/202209031321080.jpg" alt="mmexport1662182483695" style="zoom: 50%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031339581.jpg" alt="mmexport1662183547528" style="zoom: 50%;" />
 
 对元素盒子而言内边距、外边距都不是必须的，因此默认值为 0 
 
@@ -667,11 +667,11 @@ normalize.css：[Normalize.css: Make browsers render all elements more consisten
 
 第一个是默认模式，第二个使用 border-box，结果也就不一样
 
-![image-20220903133536398](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031335433.png) 
+![image-20220903133536398](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031335433.png) 
 
 可以看到不光是宽度，高度计算也和上面描述一致（设置元素高度应当特别注意！！！因为高度应当由其内容共同决定）
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031339581.jpg" alt="mmexport1662183547528" style="zoom: 50%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031339581.jpg" alt="mmexport1662183547528" style="zoom: 50%;" /> 
 
 除开基本的边距属性，还有诸如 margin-left 等这样子指代性更高的属性，命名规则和安卓一样
 
@@ -694,7 +694,7 @@ normalize.css：[Normalize.css: Make browsers render all elements more consisten
 </style>
 ```
 
-![image-20220903134502828](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031345862.png) 
+![image-20220903134502828](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031345862.png) 
 
 *注意 ：对 margin 之类的边距属性使用百分比符号，取的仍然是父元素的宽度属性为基础值*
 
@@ -860,7 +860,7 @@ normalize.css：[Normalize.css: Make browsers render all elements more consisten
 
 ==这个折叠只发生在常规块盒子==，的垂直方向上，行内盒子、浮动盒子、绝对定位盒子的外边距均不会发生折叠
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031932451.jpg" alt="mmexport1662204750069" style="zoom: 50%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031932451.jpg" alt="mmexport1662204750069" style="zoom: 50%;" /> 
 
 
 
@@ -878,7 +878,7 @@ normalize.css：[Normalize.css: Make browsers render all elements more consisten
 
 position 值设置为 relative
 
-可以通过设置 top、right、bottom、left 属性，使该元素相对于初始位置平移一定距离<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031946471.jpg" alt="mmexport1662205548960" style="zoom: 50%;" />
+可以通过设置 top、right、bottom、left 属性，使该元素相对于初始位置平移一定距离<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031946471.jpg" alt="mmexport1662205548960" style="zoom: 50%;" />
 
 ==注意：相对定位的元素原来的位置还占着==（元素相对于它在常规流中的初始位置来定位），因此这样平移可能会挡住其他元素
 
@@ -894,7 +894,7 @@ position 设置为 absolute
 
 ==绝对定位可以用于填充其包含块的所有高度（没有明确指定高度使用的底部来填充的，这个例子在后面有），还可以设定左右两边的间距以填充中间宽度==
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031958842.jpg" alt="mmexport1662206322801" style="zoom:50%;" />  
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209031958842.jpg" alt="mmexport1662206322801" style="zoom:50%;" />  
 
 **z-index 属性：**z-index 的值越大越靠近用户（以解决层叠次序的问题）==这个需要配合堆叠层级使用，详情见定位里面==
 
@@ -929,15 +929,19 @@ clip: rect(0,0,0,0);
 
 
 
+
+
+
+
 ##### 粘性布局：sticky
 
 这个也会脱离常规文档流，但其结果有点像固定定位和相对定位的结合
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209032018483.jpg" alt="mmexport1662207453604" style="zoom: 50%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209032018483.jpg" alt="mmexport1662207453604" style="zoom: 50%;" />
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209032019789.jpg" alt="mmexport1662207492144" style="zoom: 50%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209032019789.jpg" alt="mmexport1662207492144" style="zoom: 50%;" />
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209032019813.jpg" alt="mmexport1662207524470" style="zoom: 50%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209032019813.jpg" alt="mmexport1662207524470" style="zoom: 50%;" />
 
 ###### 行盒子与清除
 
@@ -974,7 +978,7 @@ h1{
 }
 ```
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209032036738.png" alt="image-20220903203604651"  />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209032036738.png" alt="image-20220903203604651"  />
 
 排版没有仔细设置的，反正大概就是这么个意思
 
@@ -986,7 +990,7 @@ h1{
 
 图片左浮、文本框右浮，但是此时会出现一个问题，由于它们的浮动（被拿出文本流），导致它们的父容器——有背景颜色的边框不会占用空间
 
-![image-20220904093344526](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209040933598.png)
+![image-20220904093344526](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209040933598.png)
 
 可以看到边框并没有其作用（重叠在一起画出了那一条线）
 
@@ -1046,7 +1050,7 @@ h1{
 
    要设置一个内容物，还得让它以块级元素展示
 
-   ![image-20220904094436838](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209040944900.png)
+   ![image-20220904094436838](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209040944900.png)
 
 
 
@@ -1136,7 +1140,7 @@ h1{
 </html>
 ```
 
-![image-20220904105354682](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041053730.png)
+![image-20220904105354682](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041053730.png)
 
 ###### 吸顶组件（粘性布局实现）
 
@@ -1149,7 +1153,7 @@ h1{
 
 `sticky` 粘性效果失效时，其表现与 `relative` 差不多
 
-![image-20230206210125580](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302062101644.png) 
+![image-20230206210125580](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302062101644.png) 
 
 
 
@@ -1174,7 +1178,7 @@ h1{
 1. 正文使用 #3b4348
 2. 链接使用 #235ea7
 
-![image-20220904121413893](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041214945.png) 
+![image-20220904121413893](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041214945.png) 
 
 
 
@@ -1241,7 +1245,7 @@ h1,h2,h3,h4,h5,h6{
 
    下面那个p由于继承的影响，它的实际大小会变成：1.314x1.314x16（下面的要比理想大一圈）
 
-   ![image-20220904124642324](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041246367.png) 
+   ![image-20220904124642324](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041246367.png) 
 
 2. **rem 单位**
 
@@ -1256,7 +1260,7 @@ h1,h2,h3,h4,h5,h6{
    }
    ```
 
-   ![image-20220904124857478](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041248519.png) 
+   ![image-20220904124857478](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041248519.png) 
 
 
 
@@ -1270,7 +1274,7 @@ h1,h2,h3,h4,h5,h6{
 
 #### 行间距、对齐以及行盒子的构造
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041301250.jpg" alt="mmexport1662267655990" style="zoom: 50%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041301250.jpg" alt="mmexport1662267655990" style="zoom: 50%;" />
 
 每行文本都会生成一个**行盒子**，行盒子还能进一步分成表示行内元素的**行内盒子**，或者连接两个行内盒子的**匿名行内盒子**
 
@@ -1307,7 +1311,7 @@ h1,h2,h3,h4,h5,h6{
 
    这个很长没必要仔细看，看下面的图
 
-   ![image-20220904132949236](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041329283.png) 
+   ![image-20220904132949236](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041329283.png) 
 
 #### 文本阴影
 
@@ -1356,7 +1360,7 @@ text-decoration 属性可以指定下划线颜色
 | oblique | 浏览器会显示一个倾斜的字体样式。       |
 | inherit | 规定应该从父元素继承字体样式。         |
 
-![image-20220904151148960](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041511999.png) 这两个显示起来没有什么区别，而且 oblique 很少用且很少有字体支持它
+![image-20220904151148960](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041511999.png) 这两个显示起来没有什么区别，而且 oblique 很少用且很少有字体支持它
 
 
 
@@ -1384,7 +1388,7 @@ h1{
 <p><span style="text-transform: lowercase;font-variant: small-caps">small-caps ABC</span>;NORMAL</p>
 ```
 
-![image-20220904152600133](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041526170.png)
+![image-20220904152600133](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041526170.png)
 
  
 
@@ -1471,7 +1475,7 @@ Robert Bringhurst 提到，**主体内容的文本长通常是 45~75 个字符�
 }
 ```
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041809778.png" alt="image-20220904180909710" style="zoom: 67%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041809778.png" alt="image-20220904180909710" style="zoom: 67%;" />
 
 
 
@@ -1489,7 +1493,7 @@ Robert Bringhurst 提到，**主体内容的文本长通常是 45~75 个字符�
    }
    ```
 
-   <img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041815480.png" alt="image-20220904181520420" style="zoom: 67%;" />
+   <img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041815480.png" alt="image-20220904181520420" style="zoom: 67%;" />
 
 2. **对齐**
 
@@ -1545,7 +1549,7 @@ Robert Bringhurst 提到，**主体内容的文本长通常是 45~75 个字符�
 + columns：是 column-count 和 column-width 的简写形式，如果两者同时设置，前者会作为最大栏数，后者会作为最小栏宽
 + column-gap：设置栏间距
 
-![image-20220904185919193](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041859270.png)
+![image-20220904185919193](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041859270.png)
 
 稍微改了一下html
 
@@ -1559,7 +1563,7 @@ Robert Bringhurst 提到，**主体内容的文本长通常是 45~75 个字符�
 }
 ```
 
-![image-20220904191628020](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041916106.png)
+![image-20220904191628020](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041916106.png)
 
 ##### 垂直律动与基线网格
 
@@ -1586,7 +1590,7 @@ Robert Bringhurst 提到，**主体内容的文本长通常是 45~75 个字符�
 
 这里我们使用的是 1.25 倍行距
 
-![image-20220904195154289](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041951366.png)
+![image-20220904195154289](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209041951366.png)
 
 
 
@@ -1841,7 +1845,7 @@ CSS 为我们提供了一系列操作图片的方法
 }
 ```
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209050902244.png" alt="image-20220905090211024" style="zoom:25%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209050902244.png" alt="image-20220905090211024" style="zoom:25%;" /> 
 
 可以看到效果并不理想，图片在整个元素盒子中平铺，呈拼贴状
 
@@ -1953,7 +1957,7 @@ background-clip 属性可以改变其裁剪行为：
 
 展示：==只有裁剪方式变了，定位方式不变 padding-box（默认）==
 
-![image-20220905114958506](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051149617.png)
+![image-20220905114958506](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051149617.png)
 
 ```css
 <!DOCTYPE html>
@@ -2024,7 +2028,7 @@ background-clip 属性可以改变其裁剪行为：
 + fixed：与页面锚定
 + local：让背景图片相对于元素内的内容固定（即如果这个元素是一个可滚动的，背景图片会随着内容滚动（元素大小固定，overflow 设置为 auto 或 scroll 且内容超出元素范围））
 
-![image-20220905133128296](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051331546.png)
+![image-20220905133128296](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051331546.png)
 
 这里贴出所有代码：
 
@@ -2204,7 +2208,7 @@ Level 3 Background and Borders 规范在支持一个元素设置多个背景图�
 }
 ```
 
-![image-20220905144922392](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051449450.png) 
+![image-20220905144922392](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051449450.png) 
 
 **分别设置：**
 
@@ -2229,7 +2233,7 @@ Level 3 Background and Borders 规范还允许开发者指定一张图片作为�
 
 **border-image 属性**支持把一张图片切成 9 块，我们只需要管切分规则，浏览器会自动进行无变形切割
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051710705.jpg" alt="mmexport1662369002179" style="zoom:25%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051710705.jpg" alt="mmexport1662369002179" style="zoom:25%;" /> 
 
 该属性会自动将每一块对应到相应的位置上，不过我们也可以改变这样的行为
 
@@ -2243,7 +2247,7 @@ Level 3 Background and Borders 规范还允许开发者指定一张图片作为�
 }
 ```
 
-![image-20220905172348061](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051723110.png) 
+![image-20220905172348061](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051723110.png) 
 
 本来之前这个最大的用途就是创建圆角边框，但是显然现在不需要了，这个操作的使用频率也就不高了
 
@@ -2261,7 +2265,7 @@ Level 3 Background and Borders 规范还允许开发者指定一张图片作为�
 }
 ```
 
-![image-20220905174640370](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051746430.png) 已经加上了阴影
+![image-20220905174640370](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051746430.png) 已经加上了阴影
 
 **扩展半径：**用于扩展阴影的大小，这个值默认为0，即阴影与元素一样大，增大这个值阴影相应增大，负值缩小
 
@@ -2271,7 +2275,7 @@ Level 3 Background and Borders 规范还允许开发者指定一张图片作为�
 }
 ```
 
-![image-20220905175110743](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051751802.png) 阴影大了一圈
+![image-20220905175110743](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051751802.png) 阴影大了一圈
 
 
 
@@ -2287,7 +2291,7 @@ Level 3 Background and Borders 规范还允许开发者指定一张图片作为�
 }
 ```
 
-![image-20220905175516456](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051755524.png) 内陷效果
+![image-20220905175516456](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051755524.png) 内陷效果
 
 
 
@@ -2313,7 +2317,7 @@ background-image 属性支持渐变色
 }
 ```
 
-![image-20220905195235446](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051952547.png)
+![image-20220905195235446](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209051952547.png)
 
 #### 线性渐变
 
@@ -2350,7 +2354,7 @@ radial-gradient() 函数，参数稍微复杂一点：
 }
 ```
 
-![image-20220905202648024](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209052026370.png)
+![image-20220905202648024](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209052026370.png)
 
 可以重复几次相同的色标
 
@@ -2360,7 +2364,7 @@ radial-gradient() 函数，参数稍微复杂一点：
 }
 ```
 
-![image-20220905202803026](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209052028341.png)
+![image-20220905202803026](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209052028341.png)
 
 #### 重复渐变
 
@@ -2420,7 +2424,7 @@ repeating-radial-gradient()
 }
 ```
 
-![image-20220905212411714](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209052124866.png)
+![image-20220905212411714](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209052124866.png)
 
 现在它的宽高比是不固定的，显然我们也无法通过设置其高度来解决这个问题（很可能会变成 150 像素，CSS 规定对于没有大小的可替代内容（如 iframe、img、object），最终的默认大小时 300 像素宽或 150 像素高），实测下来确实是这样的
 
@@ -2460,7 +2464,7 @@ repeating-radial-gradient()
    } 
    ```
 
-   <img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209052201701.png" alt="image-20220905220158533" style="zoom: 50%;" /> 
+   <img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209052201701.png" alt="image-20220905220158533" style="zoom: 50%;" /> 
 
 如果我们以后想更改大小，比如缩一半，我们可以直接在外面再套一个外套
 
@@ -2481,7 +2485,7 @@ repeating-radial-gradient()
 </div>
 ```
 
-![image-20220905220743175](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209052207321.png)
+![image-20220905220743175](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209052207321.png)
 
 ### 减少图片大小
 
@@ -2560,7 +2564,7 @@ pointer-events: none
 }
 ```
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209061006560.png" alt="image-20220906100605461"  /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209061006560.png" alt="image-20220906100605461"  /> 
 
 **继续实现**
 
@@ -2581,7 +2585,7 @@ pointer-events: none
 }
 ```
 
-![image-20220906102049782](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209061020832.png) 
+![image-20220906102049782](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209061020832.png) 
 
 然后我们将文本框给弄出来
 
@@ -2593,13 +2597,13 @@ pointer-events: none
 }
 ```
 
-![image-20220906102225045](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209061022119.png) 
+![image-20220906102225045](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209061022119.png) 
 
 
 
 ##### 利用偏移实现自动大小
 
-![image-20220906105450360](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209061054729.png)
+![image-20220906105450360](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209061054729.png)
 
 ```css
 <header class="photo-header">
@@ -2659,7 +2663,7 @@ pointer-events: none
 }
 ```
 
-![image-20220906135004366](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209061350443.png) 蓝色没有到棕色上头去
+![image-20220906135004366](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209061350443.png) 蓝色没有到棕色上头去
 
 
 
@@ -2745,7 +2749,7 @@ CSS 专门引入 Flexbox 来解决水平布局问题，除此之外还能使用�
 </html>
 ```
 
-![image-20220906210737000](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209062107082.png)
+![image-20220906210737000](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209062107082.png)
 
 
 
@@ -2879,7 +2883,7 @@ FlexBox 可以有两根轴线，一根主轴，一根辅轴
 - [`flex-basis`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-basis) 属性为 `auto`。
 - [`flex-wrap`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-wrap) 属性为 `nowrap`。
 
-![image-20220907093451262](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209070934318.png) *这里只设置了文本元素的宽度（让第三个变成两行)，然后默认它会将 flex 容器扩大，前两个元素被拉伸填充交叉轴大小*
+![image-20220907093451262](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209070934318.png) *这里只设置了文本元素的宽度（让第三个变成两行)，然后默认它会将 flex 容器扩大，前两个元素被拉伸填充交叉轴大小*
 
 默认情况下如果元素过大（当然在元素可以压缩的情况下会收缩）则会溢出而不是换行
 
@@ -2897,7 +2901,7 @@ FlexBox 可以有两根轴线，一根主轴，一根辅轴
 
 在使用多行时，应当==把每一行看作一个新的`flex`容器==。任何空间分布都将在该行上发生，而==不影响该空间分布的其他行==。
 
-![image-20220907094943080](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209070949125.png) *将 flex-wrap 设置为 wrap（为了能让它分行，我对flex容器进行了限宽)，可以注意到下面一行的拉伸并没有影响到第一行*
+![image-20220907094943080](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209070949125.png) *将 flex-wrap 设置为 wrap（为了能让它分行，我对flex容器进行了限宽)，可以注意到下面一行的拉伸并没有影响到第一行*
 
 flex-wrap **属性值**：
 
@@ -2931,9 +2935,13 @@ flex-wrap **属性值**：
 
 ###### [Flex 元素属性：`flex-basis`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox#flex_元素属性：flex-basis)
 
-+ `flex-basis` 定义了该元素的**空间大小（\**the size of that item in terms of the space\**）**，flex 容器里除了元素所占的空间以外的富余空间就是**可用空间** available space。 该属性的默认值是 `auto` 。此时，浏览器会检测这个元素是否具有确定的尺寸。 在上面的例子中，所有元素都设定了宽度（width）为 100px，所以 `flex-basis` 的值为 100px。
++ `flex-basis` 定义了该元素的**初始空间大小（\**the size of that item in terms of the space\**）**，flex 容器里除了元素所占的空间以外的富余空间就是**可用空间** available space。 该属性的默认值是 `0%` 。此时，浏览器会检测这个元素是否具有确定的尺寸。 在上面的例子中，所有元素都设定了宽度（width）为 100px，所以 `flex-basis` 的值为 100px。
 
 + 如果没有给元素设定尺寸，`flex-basis` 的值采用元素内容的尺寸。这就解释了：我们给只要给 Flex 元素的父元素声明 `display: flex` ，所有子元素就会排成一行，且自动分配小大以充分展示元素的内容。
+
++ "flex-basis:auto" 的含义是 "参照我的`width`和`height`属性".
+
++ 关于该属性有些问题，见下面滚动问题
 
   
 
@@ -2997,13 +3005,36 @@ flex-wrap **属性值**：
 
      `justidy-self`属性让单个元素在主轴方向上对齐
 
-   
-   
-   
+
+
+
+#### Flex 布局下子元素滚动问题
+
+现在存在的问题：在 flex 布局下某个子元素在过长时它不进行滚动，相反它试图撑大父元素
+
+例如想实现效果：
+
+![image.png](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302271614631.webp) 
+
+结果却变成这个样子：
+
+![image.png](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302271614427.webp) 
+
+问题解决关键：
+
++ flex-basis：用于指定 flex 元素在主轴方向上的初始大小
+  + flex-basis：具有比 `width` (或者在 `flex-direction: column` 情况下设置了`height`)的优先级更高 
++ flex-basis：==默认值为0%，在父元素高度不确定的情况下会被解析为 content==
+
+这就是问题所在，flex-basis 默认值为0%，优先级比 height 高，但是此时 height 并不是一个固定的值，还不能确定它的大小，导致 0% 被解析为 content，然后它又具有比 height 更高的优先级，导致 height:100% 无法限制其高度，子元素撑大父元素
+
+==解决==：将 flex-basis 设置为 0px，即初始大小为 0
+
+
 
 #### Flex 实现色子的面
 
-例子：三![image-20230206202925936](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302062031502.png)
+例子：三![image-20230206202925936](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302062031502.png)
 
 ```html
 <body>
@@ -3056,7 +3087,7 @@ flex-wrap **属性值**：
 
 #### 网格布局中的术语
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209080910870.png" alt="image-20220908091001532" style="zoom: 33%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209080910870.png" alt="image-20220908091001532" style="zoom: 33%;" /> 
 
 + 被设置为 display: grid 的元素叫**网格容器**（grid container），即图中的粗线框区域
 + 容器被**网格线**（grid line）分为多个区域，每个区域叫**网格单元**（grid cell）
@@ -3189,7 +3220,7 @@ Flexbox 和 Grid Layout 都是根据 CSS Box Alignment 规范确定其子项行�
    + space-around
    + space-evenly
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209081052858.png" alt="image-20220908105220545" style="zoom: 33%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209081052858.png" alt="image-20220908105220545" style="zoom: 33%;" /> 
 
 
 
@@ -3223,7 +3254,7 @@ Flexbox 和 Grid Layout 都是根据 CSS Box Alignment 规范确定其子项行�
    }
    ```
 
-   <img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209081516326.png" alt="image-20220908151654159" style="zoom:25%;" />
+   <img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209081516326.png" alt="image-20220908151654159" style="zoom:25%;" />
 
    =="." 表示的是匿名单元，没有名字且不会合成为一个==
 
@@ -3432,9 +3463,9 @@ CSS 像素和物理像素实际上是有区别的，但是我们并不需要管�
 </html>
 ```
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209081624379.png" alt="image-20220908162413251" style="zoom:25%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209081624379.png" alt="image-20220908162413251" style="zoom:25%;" /> 
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209081624758.png" alt="image-20220908162434660" style="zoom:25%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209081624758.png" alt="image-20220908162434660" style="zoom:25%;" /> 
 
 我们还可以进一步设置从宽高比由小变多的过程中，栏目从一条到两条到很多条
 
@@ -3880,7 +3911,7 @@ HTML 表单涉及到的相关元素和属性实在太多了，这里只进行外
 </script></html>
 ```
 
-![image-20220910153601289](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209101536358.png) 
+![image-20220910153601289](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209101536358.png) 
 
 
 
@@ -3910,7 +3941,7 @@ HTML 表单涉及到的相关元素和属性实在太多了，这里只进行外
 
 可以注意到 lable 字段名会出现在右侧，且由于我们将 input 放置在它里面，不会因为 display: block 而分成两行
 
-![image-20220910181855551](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209101818613.png) 
+![image-20220910181855551](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209101818613.png) 
 
 
 
@@ -3924,7 +3955,7 @@ HTML 表单涉及到的相关元素和属性实在太多了，这里只进行外
    <input name="comment-url" id="comment-url" type="url" placeholder="https://example.com">
    ```
 
-   ![image-20220910182635175](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209101826234.png) 
+   ![image-20220910182635175](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209101826234.png) 
 
    可以使用伪类定位到 placeholder 给它添加样式
 
@@ -3970,7 +4001,7 @@ HTML 表单涉及到的相关元素和属性实在太多了，这里只进行外
    }
    ```
 
-   ![image-20220910192134558](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209101921627.png) 
+   ![image-20220910192134558](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209101921627.png) 
 
 
 
@@ -4006,7 +4037,7 @@ HTML 表单涉及到的相关元素和属性实在太多了，这里只进行外
 }
 ```
 
-![image-20220911123418287](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209111234379.png) 
+![image-20220911123418287](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209111234379.png) 
 
 
 
@@ -4080,13 +4111,13 @@ Multi-Column Layout 模式非常适合这种布局
 
 ### 二维变换
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209111549435.png" alt="image-20220911154904264" style="zoom: 33%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209111549435.png" alt="image-20220911154904264" style="zoom: 33%;" />
 
 从技术上来说，变换改变的是元素所在的**坐标系统**。元素本身还是在页面原来的位置，但它们“畸变”后的影像变换了
 
 所以不管元素最终变换到哪里去了，我们仍然可以用它本来在视口中的坐标描述其位置
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209111556422.png" alt="image-20220911155628336" style="zoom: 50%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209111556422.png" alt="image-20220911155628336" style="zoom: 50%;" />
 
 ==由于以上的特性，变换不需要重新计算文本大小，其性能是很好的==
 
@@ -4149,9 +4180,9 @@ button:active{ /*按钮被按下后处于活动状态，激活这个规则*/
 }
 ```
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209111818486.png" alt="image-20220911181820402" style="zoom: 50%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209111818486.png" alt="image-20220911181820402" style="zoom: 50%;" />
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209111818024.png" alt="image-20220911181837949" style="zoom: 50%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209111818024.png" alt="image-20220911181837949" style="zoom: 50%;" />
 
 #### 过渡计时函数
 
@@ -4326,7 +4357,7 @@ https://cubic-bezier.com 这个网站可以帮我们创建
 
 而如果设置 `perspective` 后，将会看到三维的效果。
 
-![image-20220912133840468](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209121338538.png)
+![image-20220912133840468](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209121338538.png)
 
 而 `perspective-origin` 表示 3D 元素透视视角的基点位置，默认的透视视角中心在容器是 `perspective` 所在的元素，而不是他的后代元素的中点，也就是 `perspective-origin: 50% 50%`。
 
@@ -4557,7 +4588,7 @@ transform-style: preserve-3d; // 子元素将保留其 3D 位置。
 </html>
 ```
 
-![image-20220912152247243](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209121522320.png)
+![image-20220912152247243](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209121522320.png)
 
 
 
@@ -4576,7 +4607,7 @@ CSS Shapes 是一个新标准，旨在让 Web 设计者能使用各种形状（�
 + 盒子中的内容形状：shape-inside（现在实现得还很不好）
 + 设置影响周边内容流的形状：shape-outside
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209121551820.png" alt="image-20220912155153579" style="zoom:33%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209121551820.png" alt="image-20220912155153579" style="zoom:33%;" /> 
 
 shape-outside 属性值：
 
@@ -4610,7 +4641,7 @@ shape-outside 属性值：
 }
 ```
 
-![image-20220912163303260](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209121633405.png)
+![image-20220912163303260](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209121633405.png)
 
 
 
@@ -5257,7 +5288,7 @@ yarn add postcss-pxtorem@5.1.1 amfe-flexible -S
 
    postcss 的插件，用于将像素单位生成 rem 单位
 
-![image-20230114142700823](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301141427895.png) 安装完成后 package.json 中会生成对应依赖
+![image-20230114142700823](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301141427895.png) 安装完成后 package.json 中会生成对应依赖
 
 引入后要进行相应配置
 
@@ -5308,7 +5339,7 @@ yarn add postcss-pxtorem@5.1.1 amfe-flexible -S
 
 成功标志：
 
-![image-20230114144103107](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301141441168.png) 
+![image-20230114144103107](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301141441168.png) 
 
 会自动把我们设的 px 单位转换为对应 rem 单位值
 
@@ -5515,9 +5546,9 @@ html {
 
 效果：
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302052023304.png" alt="image-20230205202305173" style="zoom: 50%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302052023304.png" alt="image-20230205202305173" style="zoom: 50%;" /> 
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302052025688.png" alt="image-20230205202516558" style="zoom:50%;" />  
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302052025688.png" alt="image-20230205202516558" style="zoom:50%;" />  
 
 
 

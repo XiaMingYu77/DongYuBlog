@@ -166,7 +166,7 @@ SELECT DISTINCT Company FROM Orders
 
 结果：
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112112132684.jpg" style="zoom:25%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112112132684.jpg" style="zoom:25%;" /> 
 
 这样“W3School”就只出现了一次
 
@@ -1852,7 +1852,7 @@ Microsoft Access、MySQL、SQL Server 所使用的数据类型和范围
 
 ### Microsoft Access
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151119106.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151119106.jpg)
 
 ### MySQL 数据类型
 
@@ -1860,17 +1860,17 @@ MySQL 中有三种主要的类型：文本、数字和日期/时间类型
 
 1. Text 类型：
 
-   ![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151125438.jpg)
+   ![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151125438.jpg)
 
 2. Number 类型
 
-   ![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151126854.jpg)
+   ![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151126854.jpg)
 
    这些整数类型拥有额外的选项 UNSIGNED。通常整数可以是负数或者正数。如果添加 UNSIGNED 属性，那么范围将从 0 开始。
 
 3. Date类型
 
-   ![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151130612.jpg)
+   ![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151130612.jpg)
 
    注意：DATETIME() 和 TIMESTAMP() 返回相同的格式，但是它们的工作方式很不同
 
@@ -1884,27 +1884,27 @@ MySQL 中有三种主要的类型：文本、数字和日期/时间类型
 
 1. Character 字符串:
 
-   ![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151138428.jpg)
+   ![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151138428.jpg)
 
 2. Unicode 字符串：
 
-   ![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151140683.jpg)
+   ![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151140683.jpg)
 
 3. Binary 类型：
 
-   ![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151141307.jpg)
+   ![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151141307.jpg)
 
 4. Number类型
 
-   ![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151142047.jpg)
+   ![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151142047.jpg)
 
 5. Date 类型
 
-   ![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151143871.jpg)
+   ![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151143871.jpg)
 
 6. 其他数据类型
 
-   ![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151144893.jpg)
+   ![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151144893.jpg)
 
 ## SQL 函数
 
@@ -1942,11 +1942,11 @@ WHERE OrderPrice>(SELECT AVG(OrderPrice) FROM Orders)
 
 #### MS Access 中的合计函数
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151929906.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151929906.jpg)
 
 #### SQL Server 中的合计函数
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151933980.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151933980.jpg)
 
 ### Scalar 函数
 
@@ -1954,7 +1954,7 @@ WHERE OrderPrice>(SELECT AVG(OrderPrice) FROM Orders)
 
 #### Ms Access 中的 Scalar 函数
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151936843.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112151936843.jpg)
 
 ==注意：==如果用的是 SQL Server 数据库，请使用 getdate() 函数获取当前日期和时间
 
@@ -2078,4 +2078,4 @@ FROM Products
 
 ## 快速查询表
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112152037932.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202112152037932.jpg)

@@ -6,25 +6,25 @@ GitHub似乎对我有限制无论是下载还是上传速度都极其慢，具�
 
 ## GitHub
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311084551.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311084551.jpg)
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311084604.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311084604.jpg)
 
 接下来要在GitHub里面创建令牌（Token）**需要注意，本步骤后面给出的令牌只会显示一次要自己保存**
 
 + 点击头像，选中Settings
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311085048.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311085048.jpg)
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311085123.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311085123.jpg)
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311085202.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311085202.jpg)
 
-![v2-3104a1ab3de2c6e8a4e0d76837c4e18a](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311085240.jpg)
+![v2-3104a1ab3de2c6e8a4e0d76837c4e18a](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311085240.jpg)
 
 **下面的令牌一定要保存！！！**
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311085439.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311085439.jpg)
 
 接下来是GitHub的下载解锁，需要更改hosts文件
 
@@ -76,22 +76,20 @@ PicGo是在GitHub中下载的，这个就自己去找吧，那个里面教程什
 
 下载完后打开软件，点击左边图床设计，选择GitHub图床
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311093204.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311093204.jpg)
 
 分支名更改为main
 
-然后在最后面自定义域名那里打上https://gcore.jsdelivr.net/gh/用户名/仓库名，找个代理上传
+然后在最后面自定义域名那里打上https://testingcf.jsdelivr.net/gh/用户名/仓库名，找个代理上传
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311093417.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311093417.jpg)
 
 ## Typora
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311093703.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/20210311093703.jpg)
 
 插入图片时...  那个地方设置一下插入就上传就完成了，后面验证路径通过完事
 
 这是我自己的令牌
 
-948fef171b49395a6cc5fb9f687bf7449999240f
-
-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
+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

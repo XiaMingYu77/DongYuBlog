@@ -20,7 +20,7 @@ git 的安装自见教程，非常简单
 
 1. 直接在电脑上找到那个文件夹，然后进去直接右键选择 Git Bash here
 
-   ![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202181830787.png) 
+   ![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202181830787.png) 
 
 2. 在 Git Bash 中输入路径
 
@@ -28,11 +28,11 @@ git 的安装自见教程，非常简单
 
    + 可以直接输入一个完整的文件夹路径
 
-     <img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202181834808.jpg" style="zoom:150%;" /> 
+     <img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202181834808.jpg" style="zoom:150%;" /> 
 
    + 也可以逐层 cd 进去
 
-     <img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202181834577.jpg" style="zoom:150%;" /> 
+     <img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202181834577.jpg" style="zoom:150%;" /> 
 
 ### 查看
 
@@ -46,7 +46,7 @@ git 的安装自见教程，非常简单
 
   `ls`
 
-  <img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202181838316.jpg" style="zoom:150%;" /> 
+  <img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202181838316.jpg" style="zoom:150%;" /> 
 
 ### 退出
 
@@ -82,7 +82,7 @@ git 的安装自见教程，非常简单
 
 ### 建立远程仓库
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182003296.jpg)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182003296.jpg)
 
 根据项目需求不同对其进行设置
 
@@ -110,17 +110,17 @@ https://blog.csdn.net/qq_36667170/article/details/79094257?utm_source=app&app_ve
 
 复制红框中的代码
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182051118.png)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182051118.png)
 
 在你想连接的本地仓库打开 Git bash（注意：之前必须把这个项目文件初始化成了本地仓库）
 
 `git remote add 名字 连接地址`
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182055057.png)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182055057.png)
 
 这样就绑定好了，可以使用`git remote -v`测试是否连接成功
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182057913.png)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182057913.png)
 
 注意到 fetch 和 push 都是成对出现的
 
@@ -134,7 +134,7 @@ https://blog.csdn.net/qq_36667170/article/details/79094257?utm_source=app&app_ve
 
 使用`git status`查看所有更新了但没有放入缓存区的文件
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182104088.png)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182104088.png)
 
 ### git add 将修改的文件添加到缓存区
 
@@ -154,7 +154,7 @@ https://blog.csdn.net/qq_36667170/article/details/79094257?utm_source=app&app_ve
 
 `git commit -m "注释"`
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182125334.png)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202182125334.png)
 
 一定要加`-m`，否则会进入vim编辑器，对新手很不友好
 
@@ -170,7 +170,7 @@ https://blog.csdn.net/qq_36667170/article/details/79094257?utm_source=app&app_ve
 
 不过修改后 push 可能会报错，因为 github 觉得我的本地库和远程仓库冲突了：（两者上次的 commit 不一样，远程仓库认为它们不一样）
 
-![](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202191910547.png)
+![](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202202191910547.png)
 
 因为刚才在本地修改了上一次的 commit 信息，这时候需要强制推送，顶掉以前的 commit
 
@@ -223,3 +223,172 @@ git merge 才执行合并数据
 文件夹名字会自动变成远程仓库的名字
 
 ==然后克隆下来的文件夹会自动连接到远程仓库==，所以不再需要进行绑定了
+
+```git
+//指定分支
+git clone -b 分支名 仓库地址
+```
+
+
+
+## 分支操作
+
+### 创建分支
+
+```git
+git branch <b_name> //创建分支
+git checkout <b_name> //切换分支
+git branch -d <b_name> //删除分支
+```
+
+分支中的操作看前面
+
+### 合并分支
+
+1. 切换到目标分支
+
+   ```js
+   git checkout 分支名
+   ```
+
+2. 查看分支状态
+
+   ```git
+   git branch
+   ```
+
+3. 合并分支上的代码
+
+   ```git
+   git merge 来源分支名
+   ```
+
+#### 合并分支的不同情况
+
+对应三种场景：
+
+1. “快进”(无冲突)：
+
+   此时分支仅是主分支的直接后续版本
+
+   <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly93czEuc2luYWltZy5jbi9sYXJnZS8wMDZWckpBSmd5MWc1ajRqMXFodjNqMzBrdzBiYmRmdy5qcGc" alt="img" style="zoom: 50%;" /> 
+
+2. 非“快进”，修改不同文件。(无冲突)：
+
+   此时主分支对某文件进行了修改，同时子分支对其他文件进行了修改
+
+   <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly93czEuc2luYWltZy5jbi9sYXJnZS8wMDZWckpBSmd5MWc1ajVsbXViOXhqMzBndjBhb2FhNS5qcGc" alt="img" style="zoom:50%;" /> git merge 会找到B4、B3的共同祖先B2，然后进行合并
+
+   <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly93czEuc2luYWltZy5jbi9sYXJnZS8wMDZWckpBSmd5MWc1ajV1MHhsY2tqMzBrazBhaG14Yi5qcGc" alt="img" style="zoom:50%;" /> 
+
+3. 非“快进”，修改相同文件。(有冲突)
+
+   由于修改了相同文件产生冲突 Git 没法干净的合并它们，此时 Git 会暂停合并，等待你去解决冲突，可以通过 git status 来查看哪些文件产生了冲突
+
+   解决冲突：==手动解决==
+
+   打开文件，会发现 git 帮我们标注出来了当前分支的代码区别，我们需要人工识别使用哪段代码然后再提交
+
+   ```git
+   This is test-1.
+   update test-1.
+   add test-1.
+   <<<<<<< HEAD
+   这是在master中修改后的内容
+   =======
+   这是在son中修改后的内容
+   >>>>>>> dev
+   ```
+
+   修改后再 git add 提交就好了
+
+
+
+## Git 撤销/回滚
+
+<img src="https://ask.qcloudimg.com/http-save/yehe-5799784/t0jam7sqb0.jpeg?imageView2/2/w/1620" alt="img" style="zoom: 67%;" /> 
+
+分为以下几种情况：==注意：此处HEAD指代当前版本==
+
+1. 工作区代码回滚：
+
+   ```git
+   git checkout -- a.txt   # 丢弃某个文件，或者
+   git checkout -- .       # 丢弃全部
+   ```
+
+   运行后文件会恢复缓存区中的状态
+
+2. 代码git add到缓存区，并未commit提交
+
+   ```git
+   git reset HEAD .  或者
+   git reset HEAD a.txt
+   ```
+
+   这个命令仅改变暂存区，并不改变工作区，这意味着在无任何其他操作的情况下，工作区中的实际文件同该命令运行之前无任何变化
+
+3. git commit到本地分支、但没有git push到远程
+
+   ```
+   git log # 得到你需要回退一次提交的commit id
+   git reset --hard <commit_id>  # 回到其中你想要的某个版
+   或者
+   git reset --hard HEAD^  # 回到最新的一次提交
+   或者
+   git reset HEAD^  # HEAD^ 表示上一个版本，即上一次的commit
+   ```
+
+   --soft 不删除工作空间的改动代码 ，撤销commit，不撤销git add file
+
+   --hard 删除工作空间的改动代码，撤销commit且撤销add
+
+   另外一点，如果commit注释写错了，先要改一下注释，有其他方法也能实现，如：
+
+   ==git commit --amend 这时候会进入vim编辑器，修改完成你要的注释后保存即可。==
+
+4. 回滚远程仓库==有风险==
+
+   1）通过git reset是直接删除指定的commit
+
+   ```git
+   git log # 得到你需要回退一次提交的commit id
+   git reset --hard <commit_id>
+   git push 仓库名 HEAD --force # 强制提交一次，之前错误的提交就从远程仓库删除
+   ```
+
+   2）通过git revert 用一次新的commit来回滚之前的commit
+
+   ```git
+   git log # 得到你需要回退一次提交的commit id
+   git revert <commit_id>  # 撤销指定的版本，撤销也会作为一次提交进行保存
+   ```
+
+   3） git revert 和 git reset的区别
+
+   - git revert 用一次新的commit来回滚之前的commit，此次提交之前的commit都会被保留；
+   - git reset 回到某次提交，提交及之前的commit都会被保留，但是此commit id之后的修改都会被删除
+
+
+
+## commit合并
+
+git rebase 变基操作的实质是==丢弃一些现有的提交，然后相应地新建一些内容一样但实际上不同的提交==。 
+
+注意：千万不能在已经推送到远程仓库的提交上进行变基！这会导致其他同事开发代码基于的版本变动，产生冲突
+
+正确使用是将多次提交保存在本地（commit 但不 push），然后代码完成后合并为一个 commit 提交到远程仓库
+
+1. `git log`显示最近的提交，找到要合并的版本
+
+   ![image-20230223214504840](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302232145884.png) 
+
+   这里要将这三次合并，就要找到这三的前一个版本（版本号 a9a44bad657700b3bb229920f1f13ec93dfeb466）
+
+2. `git rebase -i 版本号`
+
+   使用**git rebase -i**命令后，会进入Git内置的vim界面
+
+   ![image-20230223214837087](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302232148120.png) 
+
+   将要保留的那一条说明设为pick，其他的设置为 f（设置成 s 需要再删除多余的描述）:wq 退出编辑就成功合并了

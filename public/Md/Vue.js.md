@@ -4,11 +4,11 @@
 
 **创建项目：**在要创建项目的文件夹下启动 cmd，输入命令 `vue ui` 打开可视化工具界面
 
-![image-20220919095103127](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209190951201.png)
+![image-20220919095103127](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209190951201.png)
 
 可视化界面里面的操作就弱智都会弄了
 
-![image-20220919100002985](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209191000013.png) 
+![image-20220919100002985](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209191000013.png) 
 
 + src 目录时存储项目代码的目录：
 
@@ -58,7 +58,7 @@
 
 @vitejs/plugin-legacy插件
 
-`npm i @vitejs/plugin-legacy@1.7.1`
+`npm i @vitejs/plugin-legacy`
 
 还要安装 `npm add -D terser`
 
@@ -107,11 +107,13 @@ browserslist 查询： https://browsersl.ist/
 
 
 
+
+
 ### 创建 Vue.js 项目
 
-在要创建项目的文件夹中运行下面的命令
+在要创建项目的文件夹中运行下面的命令（使用 vite）
 
-`npm init vue@latest`
+`npm create vite@latest`
 
 在后面的选项中注意：`Use ESLint to lint your code? No    //不开启ESLint语法检测 注意选No`
 
@@ -180,7 +182,7 @@ import './assets/global.css'
 
 TypeScript 是以 Js 为目标语言的一种编译语言，并且提供了向原生 JavaScript 转换的编译器（TypeScript -> JavaScript -> 可被浏览器运行）
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209191302204.png" alt="image-20220919130250084" style="zoom: 33%;" />
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209191302204.png" alt="image-20220919130250084" style="zoom: 33%;" />
 
 **使用 TypeScript 的优势**：
 
@@ -252,7 +254,38 @@ const bar: Bar = new Foo(); // Okay.
 
 
 
-所以如果我们将 TypeScript 中的类型合并，你会发现合并出来的类型可以适配任何一个合成它子类型
+所以如果我们将 TypeScript 中的类型合并，你会发现合并出来的类型可以适配任何一个合成它的来源，类型
+
+
+
+##### 自定义类型
+
+对象、函数、数组都能自定义类型
+
+```ts
+//type (类型别名)，顾名思义，类型别名只是给类型起一个新名字。它并不是一个类型，只是一个别名而已
+type A = {};
+type func = ()=>number;
+type arr = string[];
+```
+
+与 interface 的使用：使用交集类型实现扩展
+
+```ts
+interface get {
+  get:()=>string;
+}
+type A = get & {
+  id:string
+};
+
+let a:A = {
+  id:'a',
+  get(){
+    return this.id;
+  }
+}
+```
 
 
 
@@ -302,7 +335,7 @@ x = 42;
 
 交集类型是将多种类型叠加在一起的一种新类型，新类型包含了被叠加类型的特性
 
-![image-20220919150321887](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209191503931.png)
+![image-20220919150321887](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209191503931.png)
 
 ```ts
 interface A {
@@ -319,6 +352,103 @@ let b: B = ab;
 ```
 
 合成出来的类型属于它任意一种合成它的子类
+
+
+
+#### 函数以及 this
+
+##### 函数类型
+
+别忘了，Ts的类型推断是看内容定的，所以设定类型的时候不用费尽心思去构造类型
+
+此外，对于函数返回值，Ts会根据类型推断自动补全（指定返回类型可以让ts提示我们忘记返回值了）
+
+```ts
+function add(x: number, y: number): number {
+    return x + y;
+}
+
+let myAdd = function(x: number, y: number): number { return x + y; };
+```
+
+##### 完整函数类型
+
+```ts
+let myAdd: (x:number, y:number) => number =
+    function(x: number, y: number): number { return x + y; };
+```
+
+##### 可选参数
+
+```ts
+function add(x: number, y?: number) {
+  return typeof y == 'undefined' ? x : x + y;
+}
+
+add(1);
+```
+
+##### 在TS函数中this以及this的指定
+
+TS是基于js实现的，其this指向也与js相同
+
++ 普通函数的this指向其调用对象
++ 箭头函数的this在声明时固定下来
+
+==this 类型的指定==：
+
+作为函数的第一个参数传入并指定类型（并不会作为正式的参数）
+
+```ts
+class A{
+  private id:string='A';
+
+  getA(this:A){
+    return this.id;
+  }
+}
+```
+
+在这里体现不了其作用，看下面：函数构造器中返回函数需要用 this 中的内容，此时必须使用箭头函数固定this指向，否则在全局作用域使用时会指向window而不是我们期望的对象
+
+```ts
+//最标准写法
+interface Card {
+    suit: string;
+    card: number;
+}
+interface Deck {
+    suits: string[];
+    cards: number[];
+    createCardPicker(this: Deck): () => Card;
+}
+let deck: Deck = {
+    suits: ["hearts", "spades", "clubs", "diamonds"],
+    cards: Array(52),
+    // NOTE: The function now explicitly specifies that its callee must be of type Deck
+    createCardPicker: function(this: Deck) { //表明我们期望this为某个Deck对象
+        return () => {
+            let pickedCard = Math.floor(Math.random() * 52);
+            let pickedSuit = Math.floor(pickedCard / 13);
+
+            return {suit: this.suits[pickedSuit], card: pickedCard % 13};
+        }
+    }
+}
+
+let cardPicker = deck.createCardPicker();
+let pickedCard = cardPicker();
+
+alert("card: " + pickedCard.card + " of " + pickedCard.suit);
+```
+
+会自动检测我们可能的出错：
+
+下面使用的是普通函数作为返回值，ts类型检查会发现这个this可能是其他类型（any）所以给我们报错了
+
+![image-20230228165159867](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302281651942.png)
+
+
 
 
 
@@ -958,6 +1088,144 @@ Reflect Metadata 是 ES7 的一个提案，它主要用来在声明的时候添�
 
 
 
+#### TS编译（tsconfig.js 设置）
+
+tsconfig.js（调用`tsc --init`，会生成一个 tsconfig.json 文件）
+
+```json
+{
+  "compilerOptions": {
+    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and*/ 
+    "module": "commonjs",                                /* Specify what module code is generated. */
+    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "strict": true,                                      /* Enable all strict type-checking options. */
+    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+  }
+}
+```
+
+##### compilerOptions：编译选项配置
+
+**几个常用的编译配置**
+
++ allowJs：允许编译js文件
++ sourceMap：生成一个.map.js的文件，用于其他工具来debugg，类似于webpack的sourceMap
+
++ noImplicitAny：不允许用any，如果初学ts，建议项目部太复杂的情况下，可以借此来进行限制，前置自己培养对ts的理解
+
++ module && target：这两个有一定的关联关系
+
+  target 是编译成哪个版本的 js(es3,es5,es6...)
+
+  module 模板生成的形式，默认情况下，当target是es3的时候，那module默认为commonjs形式，否则为es6形式。
+
+  **注意(和outFile搭配使用)** ：生成的模块形式：none、commonjs、amd、system、umd、es6、es2015 或 esnext 只有 amd 和 system 能和 outFile 一起使用 target 为 es5 或更低时可用 es6 和 es2015
+
++ lib
+
+  引入ES的功能库，比如想在项目中用js中Set，Map等新的数据结构，或promise等，那要在lib中引入es2015
+
++ removeComments
+
+  编译出的文件是否带注释，当为false的时候可以减少编译出文件的体积
+
++ allowSyntheticDefaultImports
+
+  这个配置挺重要的，如果不知道会很纳闷，不好排查为啥会报错
+
+  当它为false的时候,引入模块的时候必须以*as的形式，例如引入react
+
+  ```js
+  import * as React from 'react'
+  ```
+
+  当为true的时候
+
+  ```js
+  import React from 'react'
+  ```
+
+  但要注意，他要配合module是esModule的格式或者--esModuleInterop为true的时候，因为react是commonjs写的，并没有default,所以import React from 这种default引入是不对的，具体可以看下这篇文章 [blog.leodots.me/post/40-thi…](https://link.juejin.cn/?target=https%3A%2F%2Fblog.leodots.me%2Fpost%2F40-think-about-allowSyntheticDefaultImports.html)
+
++ jsx
+
+  如果用tsx文件(React-ts)那么该项要配置成 jsx:"react"
+
++ baseUrl
+
+  举个例子:
+
+  在根目录的src目录有个hello文件夹，其中hello里包含world.ts
+
+  在根目录的app.ts下
+
+  ```JS
+  import { example } from "./src/hello/world"
+  //当baseUrl: './src' 可简写为
+  import { example } from "hello/world"
+  ```
+
+  一般不要去动这个设置
+
++ paths
+
+  以 baseUrl 为基础
+
+  ![image-20230228231243433](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302282312493.png) 
+
+  那么将可以这样引入：
+
+  ![image-20230228231610979](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302282316037.png) 
+
+  ```ts
+  import creatRibbon from '@/components/coloredRibbon'
+  ```
+
++ 装饰器与元数据（因为它们还是实验性的代码，所以的单独启用）
+
+  ```json
+  "experimentalDecorators": true,  //装饰器
+  "emitDecoratorMetadata": true    //元数据
+  ```
+
+  
+
+##### 对哪些文件进行编译：files，include，exclude
+
+```json
+{
+    "compilerOptions": {},
+    "files": [], 
+    "include": [],
+    "exclude": [] 
+}
+```
+
++ files：指定某个具体的文件，**适用于比较小型的项目，规定几个特定的文件。**（这个只是指定入口文件，在里面依赖的内容会去编译）
+
++ 多项目：include + exclude
+
+  ```json
+  "include": ["src/**/*"],    // '/**'包含子文件夹，'/*'不包含子文件夹， 这行表示会编译src里面所有的（包括子文件夹的）文件
+  "exclude": ["src/except.*"]
+  ```
+
+  - include可以和file联用
+  - exclude只对include有效，对files无效
+  - 如果 files 和 include 都未设置，那么除了 exclude 排除的文件，编译器会默认包含路径下的所有 TS 文件
+
+##### extends
+
+- extends 可以通过指定一个其他的 tsconfig.json 文件路径，来继承这个配置文件里的配置
+- 在==原文件里的配置先被加载==，然后被来至继承文件里的配置重写
+
+##### references
+
+**项目引用（Project References）** 功能，可以为项目的不同部分使用不同的 TypeScript 配置
+
+在vue里面具体使用就是为 vite 单独配置（vite 需要运行在 node 环境中，但是其他代码是运行在浏览器环境中的）
+
 
 
 ### Vue.js 应用实例
@@ -1056,7 +1324,7 @@ createApp(App)
 
 #### Vue.js 的生命周期（vue2）
 
-![image-20220924131045280](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241310376.png)
+![image-20220924131045280](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241310376.png)
 
 这些生命周期函数可以在相对应的位置被调用
 
@@ -1764,7 +2032,7 @@ export default class HelloWorld extends Vue {
 
 有时我们的 arr 改变了希望它重新渲染，这时候 key 属性必须绑定一个每个 item 独有的属性值（不能是 index 因为会重复导致不刷新），这样每次切换就能够自己刷新了
 
-![image-20230117190352835](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301171903934.png)
+![image-20230117190352835](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301171903934.png)
 
 示例代码中的 subItems 会在运行过程中改变，这时将 key 属性与每个 item 的独有属性绑定就能实现自动刷新了
 
@@ -1848,7 +2116,7 @@ export default class HelloWorld extends Vue {
 <style></style>
 ```
 
-![image-20220924155731891](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241557943.png) 
+![image-20220924155731891](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241557943.png) 
 
 
 
@@ -2050,7 +2318,7 @@ let getAnswer = function(question:string){
 </script>
 ```
 
-![image-20220924162752462](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241627514.png) 
+![image-20220924162752462](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241627514.png) 
 
 
 
@@ -2152,7 +2420,7 @@ watchEffect(() => {
 
 注意：可以与普通的 class attribute 并存（它们会在渲染时进行合并）
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241720526.png" alt="image-20220924172051420" style="zoom: 50%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241720526.png" alt="image-20220924172051420" style="zoom: 50%;" /> 
 
 相当于只是将本来绑定 class 的字符串更新了一下
 
@@ -2170,7 +2438,7 @@ watchEffect(() => {
 
 vue3 实现了 css 作用域
 
-![image-20230116175033346](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301161750415.png) 
+![image-20230116175033346](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301161750415.png) 
 
 加上 scoped 后正常编写的样式只会作用到本组件的元素上
 
@@ -2178,7 +2446,7 @@ vue3 实现了 css 作用域
 
 有时候我们引用别人的组件，需要对组件内部的样式进行修改，就可以用深层穿透实现
 
-![image-20230116175207829](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301161752896.png) 
+![image-20230116175207829](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301161752896.png) 
 
 此处运用该方法改变了其他组件内部的元素样式
 
@@ -2246,7 +2514,7 @@ export default class HelloWorld extends Vue {
 <style></style>
 ```
 
-![image-20220924174009537](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241740601.png) 
+![image-20220924174009537](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241740601.png) 
 
 ##### v-for 指令第二参数：索引
 
@@ -2280,7 +2548,7 @@ export default class HelloWorld extends Vue {
 <style></style>
 ```
 
-![image-20220924174225912](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241742997.png) 
+![image-20220924174225912](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209241742997.png) 
 
 ***
 
@@ -2502,7 +2770,7 @@ export default class HelloWorld extends Vue {
 <style></style>
 ```
 
-![image-20220925122805534](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209251228610.png) 
+![image-20220925122805534](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209251228610.png) 
 
 #### 表单值绑定
 
@@ -2762,7 +3030,7 @@ TO 和 TT
 
 结果会丢警告而且 attribute 没有应用上去
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209251512589.png" alt="image-20220925151204494" style="zoom:50%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209251512589.png" alt="image-20220925151204494" style="zoom:50%;" /> 
 
 **解决办法：**在 HelloWorld 组件调用子组件时，指定 v-bind="$attrs"（$attrs 暴露了 HelloWorld 上的属性）==这个在现在仍然暴露，能够正常使用==
 
@@ -2773,7 +3041,7 @@ TO 和 TT
 </template>
 ```
 
-![image-20220925151430423](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209251514498.png) 
+![image-20220925151430423](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209251514498.png) 
 
 ##### 禁用 attribute 继承
 
@@ -3012,6 +3280,47 @@ const AsyncComp = defineAsyncComponent({
 ```
 
 
+
+## 全局错误处理
+
+### app.config.errorHandler
+
+```js
+app.config.errorHandler = (err, instance, info)=>{
+    console.log(err);      //抛出的error
+    console.log(instance); //抛出error的实例（组件）
+    console.log(info);     //info 是 Vue 特定的错误信息，比如错误所在的生命周期钩子
+}
+```
+
+`app.config.warnHandler` 捕获警告
+
+### errorCaptured 生命周期钩子
+
+这个可以丢给 APP.vue 处理
+
+```js
+import { onErrorCaptured } from 'vue';
+
+onErrorCaptured((err, instance, info) => {
+    console.log(err);      //err对象
+    console.log(instance); //报错实例
+    console.log(info);     //info 是 Vue 特定的错误信息，比如错误所在的生命周期钩子
+})
+```
+
+### window.onerror
+
+js 运行异常的捕获
+
+```js
+window.onerror = function(message, source, lineno, colno, error) {
+    //message：错误信息（字符串）  //source：发生错误的脚本URL（字符串）
+    //lineno：发生错误的行号（数字）//colno：发生错误的列号（数字）
+    //error：error对象
+    console.log('捕获到异常：',{message, source, lineno, colno, error});
+}
+```
 
 
 
@@ -3706,7 +4015,7 @@ export default {
 <HelloWorld :level="1"></HelloWorld>
 ```
 
-<img src="https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209301312884.png" alt="image-20220930131256820" style="zoom:50%;" /> 
+<img src="https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202209301312884.png" alt="image-20220930131256820" style="zoom:50%;" /> 
 
 
 
@@ -4268,7 +4577,7 @@ import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
 
 ### active-class 切换router-link的样式
 
-![image-20230114180335302](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301141803414.png)
+![image-20230114180335302](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202301141803414.png)
 
 router-link 中的属性，当路由到它指定的地方时启动样式
 
@@ -4847,7 +5156,7 @@ https://juejin.cn/post/6844903613962305543
 
 + Memory Cache
 
-![img](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302011619980.jpeg) 
+![img](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302011619980.jpeg) 
 
 最先触发，设置方法是通过http首部设置强缓存和协商缓存策略，它们会命中该缓存
 
@@ -4884,7 +5193,7 @@ https://juejin.cn/post/6844903613962305543
 
 + Push Cache
 
-![img](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302011617287.jpg) 
+![img](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302011617287.jpg) 
 
 
 
@@ -5019,7 +5328,7 @@ function scroll(event: any) { //更新start和偏移量
 </style>
 ```
 
-![image-20230203194514381](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302031945465.png) 
+![image-20230203194514381](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302031945465.png) 
 
 
 
@@ -5081,4 +5390,4 @@ if (countdown >= 0) {
 }
 ```
 
-![image-20230204205339726](https://gcore.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302042053815.png) 
+![image-20230204205339726](https://testingcf.jsdelivr.net/gh/XiaMingYu77/My-Markdown-Picture/img/202302042053815.png) 
